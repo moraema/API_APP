@@ -36,6 +36,15 @@ class Pelicula  {
         return rows;
     }
 
+    static async getTitulo(titulo) {
+        const connection = await db.createConnection();
+        const [rows] = await connection.execute("SELECT titulo FROM peliculas WHERE titulo = ?",
+            [titulo]
+        );
+        connection.end();
+
+        return rows;
+    }
     static async deletePelicula(id) {
         const connection = await db.createConnection();
         const [result] = await connection.execute("DELETE FROM peliculas WHERE id =?", [id]);
