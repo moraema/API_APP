@@ -28,6 +28,7 @@ const login = async (req, res) => {
         const token = jwt.sign({ id: usuario._id }, JWT_SECRET, { expiresIn: '1h' });
         
         return res.status(200).json({
+            status: 'success',
             message: 'Sesión iniciada correctamente',
             token
         });

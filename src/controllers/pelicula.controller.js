@@ -24,6 +24,19 @@ const create = async (req, res) => {
     }
 }
 
+const createRecomendacion = async (req, res) => {
+    try {
+
+        
+        
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Hubo un error al crear la pelicula',
+            error: error.message
+        })
+    }
+}
+
 
 const getAll = async (req, res) => {
     try {
